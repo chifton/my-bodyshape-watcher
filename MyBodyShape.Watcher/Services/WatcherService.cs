@@ -136,7 +136,7 @@ namespace MyBodyShape.Watcher.Services
                         var resultsString = string.Empty;
                         foreach (var gen in records)
                         {
-                            resultsString += "\n- Height : " + gen.Height + "cm ; Expected weight : " + (gen.ExpectedWeight.HasValue ? gen.ExpectedWeight + " kgs" : " none") + "; Generated weight : " + gen.GeneratedWeight + " kgs ; Error : " + (gen.ErrorPercent.HasValue ? Math.Round(Math.Abs(gen.ErrorPercent.Value) * 100).ToString() + " %; Success : " : " none; Success : ") + (gen.Success.HasValue ? gen.Success.Value + "." : " none.");
+                            resultsString += "\n- Height : " + gen.Height + "cm ; Expected weight : " + (gen.ExpectedWeight.HasValue ? (gen.ExpectedWeight + " kgs") : " none") + "; Generated weight : " + gen.GeneratedWeight + " kgs ; Error : " + (gen.ErrorPercent.HasValue ? (Math.Round(Math.Abs(gen.ErrorPercent.Value) * 100).ToString() + " %; Success : ") : " none; Success : ") + (gen.Success.HasValue ? (gen.Success.Value + ".") : " none.");
                         }
                         var content = "New generations were made on bodyshapetests.com. Below are the results :" + resultsString + "\nThank you.\nThe BodyShape watcher";
 
